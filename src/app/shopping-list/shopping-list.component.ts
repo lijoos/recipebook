@@ -1,6 +1,8 @@
+import { Subject } from 'rxjs/Subject';
 import { ShoppingService } from './service/shopping.service';
 import { Ingredient } from './../shared/ingredient.model';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'app-shopping-list',
@@ -14,5 +16,9 @@ ingredients:Ingredient[] ;
   ngOnInit() {
    this.ingredients= this.shoppingService.getIngredient();
   }
-
+onClick(index:number)
+{
+  console.log(index);
+  this.shoppingService.editingStarted.next(index);
+}
 }

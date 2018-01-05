@@ -5,9 +5,7 @@
     ></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-details *ngIf="reciped;else ngInfo"
-    [recipe]="reciped">
-    </app-recipe-details>
-    <ng-template #ngInfo><p>Not available</p></ng-template>
+   
+   <router-outlet></router-outlet>
   </div>
 </div>
